@@ -52,3 +52,6 @@ def add_pet_to_stock(shop, new_pet)
   shop[:pets] << new_pet
 end
 
+def customer_pet_count(cust_pet_arr)
+  cust_pet_arr[:pets].length
+end
