@@ -52,10 +52,14 @@ def add_pet_to_stock(shop, new_pet)
   shop[:pets] << new_pet
 end
 
-def customer_pet_count(cust_pet_arr)
-  cust_pet_arr[:pets].length
+def customer_pet_count(cust_pet_hash)
+  cust_pet_hash[:pets].length
 end
 
-def add_pet_to_customer(cust_pet_arr, new_pet)
-  cust_pet_arr[:pets] << (new_pet)
+def add_pet_to_customer(cust_pet_hash, new_pet)
+  cust_pet_hash[:pets] << (new_pet)
+end
+
+def customer_can_afford_pet(cust_pet_hash, new_pet)
+  cust_pet_hash[:cash] >= new_pet[:price]? true : false
 end
