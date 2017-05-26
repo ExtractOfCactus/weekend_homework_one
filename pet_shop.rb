@@ -55,3 +55,7 @@ end
 def customer_pet_count(cust_pet_arr)
   cust_pet_arr[:pets].length
 end
+
+def add_pet_to_customer(cust_pet_arr, new_pet)
+  cust_pet_arr[:pets] << (new_pet)
+end
