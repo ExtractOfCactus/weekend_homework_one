@@ -65,20 +65,10 @@ def customer_can_afford_pet(cust_hash, new_pet)
 end
 
 def sell_pet_to_customer(shop, pet, cust_hash)
-  if find_pet_by_name(shop, pet[:name]) == pet 
-    if customer_can_afford_pet(cust_hash, pet)
+  if pet != nil && customer_can_afford_pet(cust_hash, pet)
       add_pet_to_customer(cust_hash, pet).length()
       add_or_remove_cash(shop, pet[:price]) 
       increase_pets_sold(shop, 1)
-    else
-      customer_pet_count(cust_hash)
-      pets_sold(shop)
-      total_cash(shop)
-    end
-  else
-    customer_pet_count(cust_hash)
-    pets_sold(shop)
-    total_cash(shop)
   end
 end
 
